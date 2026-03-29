@@ -14,15 +14,5 @@ pipeline {
                 sh 'pylint netman_netconf_obj2.py --fail-under=5'
             }
         }
-        stage('Running application') {
-            steps {
-
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                
-            }
-        }
     }
 }
