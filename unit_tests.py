@@ -19,7 +19,7 @@ class JenkinsUnitTests(unittest.TestCase):
                 
     def test_ping_from_R2_to_R5(self):
         r2 = {
-            'device_type': 'ios',
+            'device_type': 'cisco_ios',
             'host': '198.51.100.12',
             'username': 'lab',
             'password': 'lab123',
