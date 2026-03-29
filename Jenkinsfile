@@ -4,6 +4,7 @@ pipeline {
     environment {
         QUAL_GATE = 5
         SCRIPT_TO_TEST = 'netman_netconf_obj2.py'
+        TEST_SCRIPT = 'unit_tests.py'
         EMAIL = ''
     }
     
@@ -26,6 +27,11 @@ pipeline {
                 sh 'python3 ${SCRIPT_TO_TEST} | tee output.txt'
             }
         }
-        
+        stage('Unit Tests') {
+            steps {
+                echo 'Testing ${SCRIPT_TO_TEST} against unit tests'
+                sh 'python3 ${TEST_SCRIPT}'
+            }
+        }
     }
 }
