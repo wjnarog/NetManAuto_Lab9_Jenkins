@@ -1,0 +1,6 @@
+ncclient
+prettytable
+netaddr
+pandas
+ipaddress
+pylint
