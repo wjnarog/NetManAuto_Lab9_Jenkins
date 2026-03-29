@@ -4,4 +4,3 @@ netaddr
 pandas
 ipaddress
 pylint
-unittest

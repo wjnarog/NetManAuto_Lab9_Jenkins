@@ -26,6 +26,10 @@ pipeline {
                 sh 'python3 ${SCRIPT_TO_TEST} | tee output.txt'
             }
         }
-        
+        stage('Unit Tests') {
+            steps {
+                
+            }
+        }
     }
 }
