@@ -33,7 +33,8 @@ pipeline {
                 sh 'python3 ${TEST_SCRIPT}'
             }
         }
-        post {
+    }
+    post {
             success {
                 mail to: "${EMAIL}",
                     subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
@@ -45,5 +46,4 @@ pipeline {
                     body: "Build #${env.BUILD_NUMBER} failed"
             }
         }
-    }
 }
