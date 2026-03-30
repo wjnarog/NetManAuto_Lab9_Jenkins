@@ -22,8 +22,7 @@ class JenkinsUnitTests(unittest.TestCase):
             'device_type': 'cisco_ios',
             'host': '198.51.100.12',
             'username': 'lab',
-            'password': 'lab123',
-            # 'secret': 'lab123'
+            'password': 'lab123'
         }
         
         con = ConnectHandler(**r2)

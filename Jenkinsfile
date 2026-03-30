@@ -5,7 +5,7 @@ pipeline {
         QUAL_GATE = 5
         SCRIPT_TO_TEST = 'netman_netconf_obj2.py'
         TEST_SCRIPT = 'unit_tests.py'
-        EMAIL = ''
+        EMAIL = 'jenkins@localhost'
     }
     
     stages {
@@ -31,6 +31,18 @@ pipeline {
             steps {
                 echo 'Testing ${SCRIPT_TO_TEST} against unit tests'
                 sh 'python3 ${TEST_SCRIPT}'
+            }
+        }
+        post {
+            success {
+                mail to: "${EMAIL}",
+                    subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body: "Build #${env.BUILD_NUMBER} succeeded"
+            }
+            failure {
+                mail to: "${EMAIL}",
+                    subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body: "Build #${env.BUILD_NUMBER} failed"
             }
         }
     }
