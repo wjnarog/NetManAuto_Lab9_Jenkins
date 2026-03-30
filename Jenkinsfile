@@ -45,5 +45,5 @@ pipeline {
                     subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: "Build #${env.BUILD_NUMBER} failed"
             }
-        }
+    }
 }
