@@ -5,7 +5,7 @@ pipeline {
         QUAL_GATE = 5
         SCRIPT_TO_TEST = 'netman_netconf_obj2.py'
         TEST_SCRIPT = 'unit_tests.py'
-        EMAIL = 'jenkins@localhost'
+        EMAIL = 'root@localhost'
     }
     
     stages {
